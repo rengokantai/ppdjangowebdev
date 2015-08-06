@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%  static 'blat/style.css' %}"/>
+    <title>{% block title %}title is{% endblock %}</title>
+</head>
+<body>
+<header>
+    <h1><a href="{% url 'homepage' %}">app</a></h1>
+    <nav>
+        <ul>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}?next=/">out</a></li>
+            {% else %}
+                <li><a href="/login/?next=/">in</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+
+<div id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
