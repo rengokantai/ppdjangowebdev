@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'blat',
-    'debug_toolbar',
+   # 'debug_toolbar',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -103,6 +103,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = 'D:/PycharmProjects/blather/static-files'
 
 LOGIN_URL = '/login/'
 
